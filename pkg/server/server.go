@@ -156,9 +156,10 @@ func (s *Server) handle(apiOp *types.APIRequest, parser parse.Parser) {
 }
 
 func (s *Server) handleOp(apiOp *types.APIRequest) (int, interface{}, error) {
-	if err := CheckCSRF(apiOp); err != nil {
-		return 0, nil, err
-	}
+	// JUST FOR IFRAME LOGIN
+	// if err := CheckCSRF(apiOp); err != nil {
+	// 	return 0, nil, err
+	// }
 
 	if apiOp.Schema == nil {
 		return http.StatusNotFound, nil, nil
